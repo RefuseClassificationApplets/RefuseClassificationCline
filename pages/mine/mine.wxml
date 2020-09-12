@@ -1,0 +1,29 @@
+<!--pages/mine/mine.wxml-->
+<view class="top-mode">
+	<view class='userinfo'>
+    <button wx:if="{{login}}" class="userinfo-avatar" src="/images/mine.png" open-type="getUserInfo" bindgetuserinfo="getUserInfo"></button>
+		<image wx:else class="userinfo-avatar" src="{{avatarUrl}}"></image>
+		<label style="color:white">{{nickName}}</label>
+	</view>
+</view>
+<view class='go-center card-box'>
+	<view class='card-info'>
+		<view class='down-center' style='height:50%;border-bottom:1px solid #E3E3E3;'>
+			<i class="iconfont icon-youhuiquan" style="color:#FF9C35"></i>
+			<label style='font-size:15px;margin-left:15px'>您的积分：{{jf}}</label>
+		</view>
+		<view class='down-center' style='height:50%'>
+			<i class="iconfont icon-dingwei" style="color:#B6D9A9"></i>
+			<label style='font-size:15px;margin-left:15px'>问答场次：{{ts}}</label>
+		</view>
+	</view>
+</view>
+<view class="go-center" style='margin-top:80px;font-size:14px;color:blue;' bindtap='tapOneDialogButton'>
+	<label style='border-bottom:1px solid blue'>Power by: Book思议</label>
+</view>
+<mp-dialog show="{{showOneButtonDialog}}" class='go-center' bindbuttontap="tapDialogButton">
+	<label style='font-size:12px;color:#48A40B' >闲聊微信：1750359613~</label>
+</mp-dialog>
+<view class='go-center' style='margin-top:10px'>
+	<label style='font-size:12px;color:#E2E2E2'>本小程序由 HS 倾情奉献</label>
+</view>

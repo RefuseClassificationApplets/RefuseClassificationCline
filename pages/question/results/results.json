@@ -1,0 +1,5 @@
+{
+  "usingComponents": {
+    "wrong-modal":"/components/wrongModal/wrongModal"
+  }
+}

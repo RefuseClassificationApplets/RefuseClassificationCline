@@ -1,0 +1,55 @@
+<import src="../../components/common/head.wxml" />
+<!--index.wxml-->
+<view>
+	<!-- 顶部轮播图 -->
+	<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+		<block wx:for="{{imgUrls}}" wx:key="unique">
+			<swiper-item>
+				<image src="{{item}}" class="slide-image" />
+			</swiper-item>
+		</block>
+	</swiper>
+	<!-- 操作按钮 -->
+	<view class='btn-bar'>
+		<view class='btn-block' bindtap='wd1'>
+			<view class="btn_op1">初级问答</view>
+		</view>
+		<view class='btn-block' bindtap='wd2'>
+			<view class="btn_op2">中级问答</view>
+		</view>
+		<view class='btn-block' bindtap='wd3'>
+			<view class="btn_op3">高级问答</view>
+		</view>
+	</view>
+	<!-- 中部广告 -->
+	<view class="ad-box">
+		<image src='{{logo}}' class="image_ad"></image>
+	</view>
+	<!-- 底部横向滑动box -->
+	<view class='bottom-box'>
+		<scroll-view scroll-x="true" class="scroll-box">
+			<view class='slide-inline-box' wx:for="{{hUrls}}">
+				<image src='{{item}}' class='bottom-image'></image>
+			</view>
+		</scroll-view>
+	</view>
+	<!-- 排行榜列表 -->
+	<view class="container2">
+		<template is="head" data="{{title: '积分排行榜'}}" />
+	</view>
+	<view class="top-box">
+		<view class="hy-lists" wx:for="{{top}}">
+			<view class="hy-lists-lt">
+				<image src="{{item.tx}}"></image>
+				<view class="hy-lists-lt-info">
+					<view class="hy-yq-tit">{{item.nc}}</view>
+					<view class="hy-yq">{{item.js}}</view>
+					<view class="hy-user-cj">{{item.sl}}</view>
+				</view>
+			</view>
+			<view class="hy-lists-rt">
+				<view class="hy-shijian">{{item.jf}}</view>
+			</view>
+		</view>
+	</view>
+</view>
